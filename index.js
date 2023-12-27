@@ -7,7 +7,6 @@ const filterCountry = document
   .addEventListener("click", (event) => {
     event.preventDefault();
     let inputValue = document.getElementById("searchInput").value;
-    console.log(inputValue);
 
     //  API Url link
 
@@ -20,7 +19,7 @@ const filterCountry = document
         const response = await fetch(URL);
         const data = await response.json();
 
-        main_activity.innerHTML = "";
+        main_activity.innerHTML = null;
 
         data
           .filter((letestValue) =>
@@ -32,15 +31,15 @@ const filterCountry = document
             if (inputValue === "" && !filterCountry) {
             } else {
               const card = document.createElement("div");
-              card.classList.add("card");
 
               card.innerHTML = `
-                       <div>
-                       <img class="img" src=${countryValue.flags.svg} /></div>
-                      </div>
-                         <h5 class="card-title">Name: ${countryValue.name.common}</h5>
-                         <h5 class="card-title">Capital: ${countryValue.capital}</h5>
-                         <h5 class="card-title">Continent: ${countryValue.continents}</h5>
+                      <div class="card";">
+                          <img src="${countryValue?.flags?.svg}" class="card-img-top" alt="Country Flags">
+                          <div class="card-body">
+                             <h5 class="card-title">Name : ${countryValue?.name?.common}</h5>
+                             <h5 class="card-title">Capital : ${countryValue?.capital}</h5>
+                             <h5 class="card-title">Continent : ${countryValue?.continents}</h5>
+                          </div>
                       </div>
               `;
 
