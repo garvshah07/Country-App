@@ -28,7 +28,7 @@ const filterCountry = document
               .startsWith(inputValue.toLowerCase())
           )
           .map((countryValue) => {
-            if (inputValue === "" && !filterCountry) {
+            if (inputValue === "") {
             } else {
               const card = document.createElement("div");
 
@@ -53,5 +53,4 @@ const filterCountry = document
     };
 
     fetchData();
-    // document.getElementById("searchInput").value = "";
   });
