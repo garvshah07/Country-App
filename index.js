@@ -29,7 +29,7 @@ const filterCountry = document
           )
           .map((countryValue) => {
             if (inputValue === "") {
-              return fetchData();
+              return;
             } else {
               const card = document.createElement("div");
 
